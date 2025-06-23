@@ -1,0 +1,33 @@
+# Go binaries and build artifacts
+*.exe
+*.out
+*.test
+bin/
+build/
+main
+
+# Dependency directories
+vendor/
+
+# Environment and sensitive files
+.env
+.env.local
+
+# Log files
+*.log
+
+# Solidity build/compilation artifacts
+artifacts/
+cache/
+
+# Editor and IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# System files (macOS)
+.DS_Store
+
+# Temporary files
+tmp/

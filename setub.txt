@@ -1,0 +1,10 @@
+go mod init github.com/ArminRmt/fundme-go
+make install-deps
+make setup
+make start-ganache
+make deploy
+
+make fund
+make withdraw
+
+make test
