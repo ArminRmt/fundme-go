@@ -39,6 +39,8 @@ fundme-project/
 │   ├── fund/
 │   │   └── main.go
 │   └── withdraw/
+│   │   └── main.go
+│   └── refund/
 │       └── main.go
 ├── test/                   # Go tests
 │   └── fundme_test.go
@@ -105,18 +107,73 @@ Example output:
 ```
 Withdrawal transaction hash: 0xf1a0b9c8d7e6f5d4c3b2a1f0e9d8c7b6a5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d
 Successfully withdrew all funds from the contract!
+```   
+
+### Refund contributions
+```
+make refund
+```
+Example output:
+```
+Refund transaction hash: 0xa74dbc595d22d99d341425ce39ddade6440433270ce84c11250a1f2bf20a2e11
+Successfully processed refund!
 ```    
 
-### Run tests
+
+1. **Funding Validation**:
+   - ✅ Funding with sufficient ETH (meets $5 minimum)
+   - ✅ Funding with insufficient ETH (properly reverts)
+
+2. **Withdrawal Functionality**:
+   - ✅ Owner withdrawal after funding period ends
+   - ❌ Non-owner withdrawal attempts (properly reverts)
+   - ✅ Multiple funders withdrawal with state reset
+
+3. **Advanced Features**:
+   - ✅ Refund functionality during funding period
+   - ✅ Time-based restrictions enforcement
+   - ✅ Funder tracking and state management
+
+### Test Execution
+
 ```bash
+# Run all tests
 make test
+
+# Sample output
+=== RUN   TestFundMeContract
+=== RUN   TestFundMeContract/Funding_with_sufficient_ETH
+=== RUN   TestFundMeContract/Funding_with_insufficient_ETH
+=== RUN   TestFundMeContract/Owner_withdrawal_with_single_funder
+=== RUN   TestFundMeContract/Non-owner_withdrawal_attempt
+=== RUN   TestFundMeContract/Multiple_funders_and_withdrawal
+=== RUN   TestFundMeContract/Refund_functionality
+--- PASS: TestFundMeContract (0.04s)
+    --- PASS: TestFundMeContract/Funding_with_sufficient_ETH (0.00s)
+    --- PASS: TestFundMeContract/Funding_with_insufficient_ETH (0.00s)
+    --- PASS: TestFundMeContract/Owner_withdrawal_with_single_funder (0.00s)
+    --- PASS: TestFundMeContract/Non-owner_withdrawal_attempt (0.00s)
+    --- PASS: TestFundMeContract/Multiple_funders_and_withdrawal (0.01s)
+    --- PASS: TestFundMeContract/Refund_functionality (0.00s)
+PASS
 ```
 
-### Clean build artifacts
+### Test Features
+
+- ⏱️ Time manipulation for funding period validation
+- 🔄 State reset verification after operations
+- ⛽ Gas optimization checks
+- 🔐 Permission testing (owner vs non-owner)
+- 💰 Balance verification pre/post transactions
+- 🧪 Isolated test environments with contract redeployment
+
+```   
+
+### Clean build artifacts    
 ```bash
 make clean
-```
-
+```    
+     
 ## Key Commands
 
 | Command              | Description                               |
@@ -125,9 +182,11 @@ make clean
 | `make start-ganache` | Start local Ethereum blockchain           |
 | `make deploy`        | Deploy contract to local network          |
 | `make fund`          | Send ETH to contract                      |
+| `make refund`        | Refund contributions                      |
 | `make withdraw`      | Withdraw funds from contract (owner only) |
 | `make test`          | Run all tests                             |
 | `make clean`         | Remove build artifacts                    |
+```   
 
 ## Smart Contract Features
 

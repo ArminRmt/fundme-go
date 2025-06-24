@@ -1,5 +1,5 @@
 # commands run regardless of whether a file with that name exists
-.PHONY: compile-contracts install-deps generate-bindings deploy fund withdraw test clean setup
+.PHONY: compile-contracts install-deps generate-bindings deploy fund refund withdraw test clean setup
 
 install-deps:
 	go mod download
@@ -24,6 +24,9 @@ deploy:
 
 fund:
 	go run cmd/fund/main.go
+
+refund:
+	go run cmd/refund/main.go  
 
 withdraw:
 	go run cmd/withdraw/main.go
