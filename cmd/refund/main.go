@@ -46,5 +46,5 @@ func main() {
     }
 
     fmt.Printf("Refund transaction hash: %s\n", tx.Hash().Hex())
-    fmt.Println("Successfully processed refund!")
+    fmt.Println("🔄 Refund processed successfully!")
 }

@@ -38,9 +38,11 @@ fundme-project/
 │   │   └── main.go
 │   ├── fund/
 │   │   └── main.go
-│   └── withdraw/
+│   ├── withdraw/
 │   │   └── main.go
-│   └── refund/
+│   ├── refund/
+│   │   └── main.go
+│   └── status/             # NEW: Contract status monitor
 │       └── main.go
 ├── test/                   # Go tests
 │   └── fundme_test.go
@@ -134,6 +136,24 @@ Successfully processed refund!
    - ✅ Time-based restrictions enforcement
    - ✅ Funder tracking and state management
 
+
+
+### Check contract status
+```bash
+make status
+```
+Example output:
+```
+📊 FundMe Contract Status
+=========================
+👤 Owner: 0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1
+💰 Balance: 0.100000 ETH
+⏱️ Funding Deadline: Mon, 26 Jun 2023 14:30:45 UTC
+🟢 Time Remaining: 6d 23h 59m
+👥 Funders: 1
+=========================
+```
+
 ### Test Execution
 
 ```bash
@@ -176,16 +196,17 @@ make clean
      
 ## Key Commands
 
-| Command              | Description                               |
-| -------------------- | ----------------------------------------- |
-| `make setup`         | Install dependencies & generate bindings  |
-| `make start-ganache` | Start local Ethereum blockchain           |
-| `make deploy`        | Deploy contract to local network          |
-| `make fund`          | Send ETH to contract                      |
-| `make refund`        | Refund contributions                      |
-| `make withdraw`      | Withdraw funds from contract (owner only) |
-| `make test`          | Run all tests                             |
-| `make clean`         | Remove build artifacts                    |
+| Command              | Description                              |
+| -------------------- | ---------------------------------------- |
+| `make setup`         | Install dependencies & generate bindings |
+| `make start-ganache` | Start local Ethereum blockchain          |
+| `make deploy`        | Deploy contract to local network         |
+| `make fund`          | Send ETH to contract                     |
+| `make refund`        | Refund contributions                     |
+| `make withdraw`      | Withdraw funds (owner only)              |
+| `make status`        | NEW: Check contract status               |
+| `make test`          | Run all tests                            |
+| `make clean`         | Remove build artifacts                   |
 ```   
 
 ## Smart Contract Features

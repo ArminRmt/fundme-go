@@ -77,7 +77,6 @@ contract FundMe {
         if (!success) revert FundMe__WithdrawFailed();
     }
 
-    // Fixed: Only allow refunds while funding is open
     function refund() public onlyWhileOpen {
         uint256 amount = s_addressToAmountFunded[msg.sender];
         if (amount == 0) revert FundMe__NoFundsToRefund();
@@ -96,7 +95,6 @@ contract FundMe {
 
         (bool success, ) = msg.sender.call{value: amount}("");
         if (!success) {
-            // Revert state if transfer fails
             s_addressToAmountFunded[msg.sender] = amount;
             revert FundMe__RefundFailed();
         }

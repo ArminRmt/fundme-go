@@ -51,7 +51,7 @@ func main() {
     }
 
     fmt.Printf("Funding transaction hash: %s\n", tx.Hash().Hex())
-    fmt.Println("Successfully funded the contract with 0.1 ETH!")
+    fmt.Println("💸 Successfully funded the contract with 0.1 ETH!")
 
     // Reset value for future transactions
     ethClient.Auth.Value = big.NewInt(0)

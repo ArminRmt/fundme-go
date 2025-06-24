@@ -71,6 +71,7 @@ func main() {
 		log.Fatalf("Failed to save contract address to .env file: %v", err)
 	}
 
+	fmt.Println("✅ Contracts deployed successfully!")
 
     // Go compiler complain about an unused variable (Store for future use)
     _ = fundMeInstance

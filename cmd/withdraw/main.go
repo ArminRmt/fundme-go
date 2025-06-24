@@ -48,5 +48,5 @@ func main() {
     }
 
     fmt.Printf("Withdrawal transaction hash: %s\n", tx.Hash().Hex())
-    fmt.Println("Successfully withdrew all funds from the contract!")
+    fmt.Println("🏧 Successfully withdrew all funds from the contract!")
 }
