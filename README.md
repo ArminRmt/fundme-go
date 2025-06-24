@@ -28,12 +28,12 @@ FundMe is a Solidity smart contract that allows users to send Ether to a decentr
 
 ```
 fundme-project/
-├── contracts/              # Solidity smart contracts
+├── contracts/              
 │   ├── FundMe.sol
 │   └── MockV3Aggregator.sol
-├── pkg/                    # Generated Go bindings
+├── pkg/                   
 │   └── contracts/generated/
-├── cmd/                    # Interaction scripts
+├── cmd/                    
 │   ├── deploy/
 │   │   └── main.go
 │   ├── fund/
@@ -42,12 +42,12 @@ fundme-project/
 │   │   └── main.go
 │   ├── refund/
 │   │   └── main.go
-│   └── status/             # NEW: Contract status monitor
+│   └── status/            
 │       └── main.go
-├── test/                   # Go tests
+├── test/                   
 │   └── fundme_test.go
-├── Makefile                # Build automation
-└── .env.example            # Environment template
+├── Makefile                
+└── .env.example            
 ```
 
 ## Getting Started
