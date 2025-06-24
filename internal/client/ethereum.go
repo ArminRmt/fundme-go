@@ -1,13 +1,14 @@
 package client
 
 import (
-    "context"
-    "crypto/ecdsa"
-    "math/big"
+	"context"
+	"crypto/ecdsa"
+	"fmt"
+	"math/big"
 
-    "github.com/ethereum/go-ethereum/accounts/abi/bind"
-    "github.com/ethereum/go-ethereum/crypto"
-    "github.com/ethereum/go-ethereum/ethclient"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/ethclient"
 )
 
 type EthereumClient struct {

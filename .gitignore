@@ -11,10 +11,6 @@ vendor/
 
 # Environment and sensitive files
 .env
-.env.local
-
-# Log files
-*.log
 
 # Solidity build/compilation artifacts
 artifacts/
@@ -26,8 +22,5 @@ cache/
 *.swp
 *.swo
 
-# System files (macOS)
-.DS_Store
-
-# Temporary files
 tmp/
+*.log

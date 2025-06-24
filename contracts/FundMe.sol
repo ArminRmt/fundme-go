@@ -57,7 +57,7 @@ contract FundMe {
         return i_owner;
     }
 
-    // Be careful with querying large arrays
+    // careful with querying large arrays
     function getFunder(uint256 index) public view returns (address) {
         return s_funders[index];
     }
