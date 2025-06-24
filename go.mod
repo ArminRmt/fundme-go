@@ -1,4 +1,4 @@
-module github.com/ArminRmt/fundme-go // module base path
+module github.com/ArminRmt/fundme-go
 
 go 1.21
 
